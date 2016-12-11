@@ -2,7 +2,11 @@ const webpack = require('atool-build/lib/webpack');
 
 module.exports = function(webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
-
+  webpackConfig.babel.plugins.push(['import',{
+    libraryName: 'antd',
+    style: 'css'
+  }]);
+  
   // Support hmr
   if (env === 'development') {
     webpackConfig.devtool = '#eval';
