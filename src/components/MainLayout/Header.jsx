@@ -24,13 +24,13 @@ function Header({ location }) {
         <Link to="/exam_lists"><Icon type="bars" />考试列表</Link>
       </Menu.Item>
       <Menu.Item key="paper_infos">
-        <Link to="/paper_infos"><Icon type="home" />管理试卷信息</Link>
+        <Link to="/paper_infos"><Icon type="file-text" />管理试卷信息</Link>
       </Menu.Item>
       <Menu.Item key="student_infos">
-        <Link to="/student_infos"><Icon type="frown-circle" />管理学生信息</Link>
+        <Link to="/student_infos"><Icon type="user" />管理学生信息</Link>
       </Menu.Item>
       <Menu.Item key="settings">
-        <Link to="/settings"><Icon type="home" />设置</Link>
+        <Link to="/settings"><Icon type="setting" />设置</Link>
       </Menu.Item>
     </Menu>
   );
