@@ -5,6 +5,7 @@ import ExamLists from './routes/ExamLists';
 import PaperInfos from './routes/PaperInfos';
 import StudentInfos from './routes/StudentInfos';
 import Settings from './routes/Settings';
+import ExamDetails from './routes/ExamDetails';
 
 export default function({ history }) {
   return (
@@ -14,6 +15,7 @@ export default function({ history }) {
       <Route path="/paper_infos" component={PaperInfos} />
       <Route path="/student_infos" component={StudentInfos} />
       <Route path="/settings" component={Settings} />
+      <Route path="/exam_details" component={ExamDetails} />
     </Router>
   );
 };

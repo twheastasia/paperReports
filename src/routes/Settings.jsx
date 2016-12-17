@@ -21,8 +21,8 @@ Settings.propTypes = {
   	dispatch: PropTypes.func,
 };
 
-function mapStateProps({student}){
-	return {student};
+function mapStateProps({settings}){
+	return {settings};
 }
 
 export default connect(mapStateProps)(Settings);
