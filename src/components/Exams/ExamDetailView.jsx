@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom';
 import { message, Icon, BackTop, Spin } from 'antd';
 
 // Highcharts
-// const ReactHighcharts = require('react-highcharts');
+const ReactHighcharts = require('react-highcharts');
 // // Highcharts more
-// var HighchartsMore = require('highcharts-more');
-// HighchartsMore(ReactHighcharts.Highcharts);
-// var HighchartsExporting = require('highcharts-exporting');
-// HighchartsExporting(ReactHighcharts.Highcharts);
-// var Highlight = require('react-highlight');
-// var HighchartsSolidGauge = require('highcharts-solid-gauge');
-// HighchartsSolidGauge(ReactHighcharts.Highcharts);
+var HighchartsMore = require('highcharts-more');
+HighchartsMore(ReactHighcharts.Highcharts);
+var HighchartsExporting = require('highcharts-exporting');
+HighchartsExporting(ReactHighcharts.Highcharts);
+var Highlight = require('react-highlight');
+var HighchartsSolidGauge = require('highcharts-solid-gauge');
+HighchartsSolidGauge(ReactHighcharts.Highcharts);
 
 // import qrcode
 var QRCode = require('qrcode.react');
 
 // import highcharts circle view
-// var singleExamData = require('../../utils/single_exam_chart_data.js');
-// var overviewExamData = require('../../utils/overview_exam_chart_data.js');
+var singleExamData = require('../../utils/single_exam_chart_data.js');
+var overviewExamData = require('../../utils/overview_exam_chart_data.js');
 
 
 // 加载单个星星
@@ -103,9 +103,9 @@ const ExamDetailView = ({details}) => {
     var exam_data = details;
     console.log("exam detail view: " + exam_data);
     var exam_rank_info = "你真棒!排名就不告诉你了。";
-    var qrcode_url = "http://www.alo7.com";
+    var qrcode_url = "http://www.onlychild.cn/index.php/";
     var qrcode_tip = "扫描上面的二维码，分享到手机上。";
-    // var config1 = singleExamData.get_single_exam_chart_view_data(exams_data.exam_name, exams_data.scores);
+    var config1 = singleExamData.get_single_exam_chart_view_data(exams_data.exam_name, exams_data.scores);
 
 
     return (
@@ -113,7 +113,7 @@ const ExamDetailView = ({details}) => {
             <div id="title" style={{textAlign:"center",fontSize:"40px"}}>{details.exam_name}</div>
             <div id="single_exam_chart_view" >
                 <div id="single_exam_container1" style={{minWidth: "400px", maxWidth: "600px", height: "400px", margin: "auto"}}>
-                   
+                   <ReactHighcharts config={config1} />
                 </div>
                 <div id="single_exam_rank" style={{textAlign:"center",fontSize:"30px"}}>{exam_rank_info}</div>
             </div>
