@@ -16,7 +16,7 @@ function ExamDetails ({location, dispath, exam_details}){
 		      "category": "English",
 		      "exam_name": "exam2",
 		      "student_name": "小m",
-		      "scores": "99",
+		      "scores": 99,
 		      "age": "6",
 		      "skills": [
 		          {
@@ -38,7 +38,7 @@ function ExamDetails ({location, dispath, exam_details}){
 		      ],
 		      "comment": "继续努力，继续努力，还有进步的空间，还有上升的余地！不要放弃!"
 		  }
-		
+
 	}
 
 	return (
