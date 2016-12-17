@@ -101,7 +101,6 @@ const AllExamsContent = ({exams_data}) => {
 const ExamDetailView = ({details}) => {
     // 单个试卷的信息
     var exam_data = details;
-    console.log("exam detail view: " + exam_data);
     var exam_rank_info = "你真棒!排名就不告诉你了。";
     var qrcode_url = "http://www.onlychild.cn/index.php/";
     var qrcode_tip = "扫描上面的二维码，分享到手机上。";
