@@ -23,6 +23,7 @@ module.exports = {
     const pageSize = page.pageSize || 10;
     const currentPage = page.page || 1;
 
+    console.log(req);
     let data;
     let newPage;
 
@@ -60,14 +61,18 @@ module.exports = {
   },
 
   'GET /api/exams_details': function (req, res){
-    console.log(req);
-    let data;
+
+    let one_exam_data;
+    for (var i = 0; i < mock_data.data.length; i++) {
+      if (mock_data.data[i].id == req.query.id){
+        one_exam_data = mock_data.data[i];
+      }
+    };
 
     setTimeout(function () {
       res.json({
         success: true,
-        data,
-        page: newPage
+        one_exam_data
       });
     }, 500);
   }

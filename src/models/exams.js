@@ -1,5 +1,5 @@
 import {hasHistory} from 'dva/router';
-import {create, remove, update, query} from '../services/exams';
+import {create, remove, update, query, queryOne} from '../services/exams';
 import { parse } from 'qs';
 
 export default {
@@ -15,7 +15,8 @@ export default {
       current: 1,
       currentItem: {},
       modalVisible: false,
-      modalType: 'create'
+      modalType: 'create',
+      details:{}
   },
 
   subscriptions: {
@@ -50,6 +51,17 @@ export default {
          });
        }
     },
+    *queryOneExam({payload}, {call, put}){
+        const {data} = yield call(queryOne, parse(payload));
+        if(data){
+          yield put({
+            type: 'queryOneSuccess',
+            payload: {
+              details: data
+            }
+          });
+        }
+    }
   },
 
   reducers: {
@@ -62,6 +74,10 @@ export default {
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };
     },
+    queryOneSuccess(state, action){
+      console.log("query");
+      return {...state, ...action.payload};
+    }
   },
 
 }

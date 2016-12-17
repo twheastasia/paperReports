@@ -25,3 +25,7 @@ export async function update(params) {
     body: qs.stringify(params),
   });
 }
+
+export async function queryOne(params){
+  return request(`/api/exams_details?${qs.stringify(params)}`);
+}
