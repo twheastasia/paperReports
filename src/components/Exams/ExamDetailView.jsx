@@ -105,7 +105,7 @@ const ExamDetailView = ({details}) => {
     var exam_rank_info = "你真棒!排名就不告诉你了。";
     var qrcode_url = "http://www.onlychild.cn/index.php/";
     var qrcode_tip = "扫描上面的二维码，分享到手机上。";
-    var config1 = singleExamData.get_single_exam_chart_view_data(exams_data.exam_name, exams_data.scores);
+    var config1 = singleExamData.get_single_exam_chart_view_data(exam_data.exam_name, exam_data.scores);
 
 
     return (
